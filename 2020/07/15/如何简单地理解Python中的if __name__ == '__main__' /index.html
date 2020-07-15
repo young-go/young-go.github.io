@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Python变量笔记, Young的学习记录">
+    <meta name="keywords" content="如何简单地理解Python中的if __name__ == &#39;__main__&#39; , Young的学习记录">
     <meta name="description" content="书山有路勤为径，学海无涯苦作舟">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Python变量笔记 | Young的学习记录</title>
+    <title>如何简单地理解Python中的if __name__ == &#39;__main__&#39;  | Young的学习记录</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -259,12 +259,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Python变量笔记</h1>
+                    <h1 class="description center-align post-title">如何简单地理解Python中的if __name__ == &#39;__main__&#39; </h1>
                 </div>
             </div>
         </div>
@@ -379,25 +379,12 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/Python%E7%AC%94%E8%AE%B0/">
-                                <span class="chip bg-color">Python笔记</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/Python/" class="post-category">
-                                Python
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -427,7 +414,61 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>变量存储在内存中的值。这就意味着在创建变量时会在内存中开辟一个空间。<br>基于变量的数据类型，解释器会分配指定内存，并决定什么数据可以被存储在内存中。<br>因此，变量可以指定不同的数据类型，这些变量可以存储整数，小数或字符。<br>Python变量可以直接赋值<br>每个变量在使用前都必须赋值，变量赋值以后该变量才会被创建。<br>等号（=）用来给变量赋值。<br>等号（=）运算符左边是一个变量名,等号（=）运算符右边是存储在变量中的值。例如：<br>counter = 100 # 赋值整型变量<br>miles = 1000.0 # 浮点型<br>name = “John” # 字符串<br>列表用 “[ ]” 标识类似 C 语言中的数组。<br>元组用 “( )” 标识。内部元素用逗号隔开。但是元组不能二次赋值，相当于只读列表。<br>字典用 “{ }” 标识。字典由索引 key 和它对应的值 value 组成。  </p>
+                <blockquote>
+<p>转载自：<a href="https://blog.csdn.net/yjk13703623757/article/details/77918633" target="_blank" rel="noopener">https://blog.csdn.net/yjk13703623757/article/details/77918633</a></p>
+</blockquote>
+<h1 id="1-摘要"><a href="#1-摘要" class="headerlink" title="1. 摘要"></a>1. 摘要</h1><p>通俗的理解<strong>name</strong> == ‘<strong>main</strong>‘：假如你叫小明，在朋友眼中，你是小明(<strong>name</strong> == ‘小明’)；在你自己眼中，你是你自己(<strong>name</strong> == ‘<strong>main</strong>‘)。  </p>
+<p>if <strong>name</strong> == ‘<strong>main</strong>‘的意思是：当.py文件被直接运行时，if <strong>name</strong> == ‘<strong>main</strong>‘之下的代码块将被运行；当.py文件以模块形式被导入时，if <strong>name</strong> == ‘<strong>main</strong>‘之下的代码块不被运行。  </p>
+<h1 id="2-程序入口"><a href="#2-程序入口" class="headerlink" title="2. 程序入口"></a>2. 程序入口</h1><p>对于很多编程语言来说，程序都必须要有一个入口，比如C，C++，以及完全面向对象的编程语言Java，C#等。如果你接触过这些语言，对于程序入口这个概念应该很好理解，C，C++都需要有一个main函数作为程序的入口，也就是程序的运行会从main函数开始。同样，Java，C#必须要有一个包含Main方法的主类，作为程序入口。  </p>
+<p>而Python则不同，它属于脚本语言，不像编译型语言那样先将程序编译成二进制再运行，而是动态的逐行解释运行。也就是从脚本第一行开始运行，没有统一的入口。  </p>
+<p>一个Python源码文件（.py）除了可以被直接运行外，还可以作为模块（也就是库），被其他.py文件导入。不管是直接运行还是被导入，.py文件的最顶层代码都会被运行（Python用缩进来区分代码层次），而当一个.py文件作为模块被导入时，我们可能不希望一部分代码被运行。  </p>
+<h1 id="2-1-一个-py文件被其他-py文件引用"><a href="#2-1-一个-py文件被其他-py文件引用" class="headerlink" title="2.1 一个.py文件被其他.py文件引用"></a>2.1 一个.py文件被其他.py文件引用</h1><p>假设我们有一个const.py文件，内容如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">PI &#x3D; 3.14</span><br><span class="line"></span><br><span class="line">def main():</span><br><span class="line">    print(&quot;PI:&quot;, PI)</span><br><span class="line"></span><br><span class="line">main()</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>运行结果：PI: 3.14<br>现在，我们写一个用于计算圆面积的area.py文件，area.py文件需要用到const.py文件中的PI变量。从const.py中，我们把PI变量导入area.py：  </p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">from const import PI</span><br><span class="line"></span><br><span class="line">def calc_round_area(radius):</span><br><span class="line">    return PI * (radius ** 2)</span><br><span class="line"></span><br><span class="line">def main():</span><br><span class="line">    print(&quot;round area: &quot;, calc_round_area(2))</span><br><span class="line"></span><br><span class="line">main()</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>运行结果：<br>PI: 3.14<br>round area:12.56</p>
+</blockquote>
+<h2 id="2-2-修改const-py，添加if-name-“main“"><a href="#2-2-修改const-py，添加if-name-“main“" class="headerlink" title="2.2 修改const.py，添加if name == “main“"></a>2.2 修改const.py，添加if <strong>name</strong> == “<strong>main</strong>“</h2><p>我们看到const.py中的main函数也被运行了，实际上我们不希望它被运行，因为const.py提供的main函数只是为了测试常量定义。这时if <strong>name</strong> == ‘<strong>main</strong>‘派上了用场，我们把const.py改一下，添加if <strong>name</strong> == “<strong>main</strong>“：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">PI &#x3D; 3.14</span><br><span class="line"></span><br><span class="line">def main():</span><br><span class="line">    print(&quot;PI:&quot;, PI)</span><br><span class="line"></span><br><span class="line">if __name__ &#x3D;&#x3D; &quot;__main__&quot;:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>运行const.py结果：PI: 3.14<br>运行area.py结果：round area:12.56<br>如上，我们可以看到if <strong>name</strong> == ‘<strong>main</strong>‘相当于Python模拟的程序入口，Python本身并没有这么规定，这只是一种编码习惯。由于模块之间相互引用，不同模块可能有这样的定义，而程序入口只有一个。到底哪个程序入口被选中，这取决于<strong>name</strong>的值。  </p>
+</blockquote>
+<h1 id="3-name"><a href="#3-name" class="headerlink" title="3. name"></a>3. <strong>name</strong></h1><h2 id="3-1-name反映一个包的结构"><a href="#3-1-name反映一个包的结构" class="headerlink" title="3.1 name反映一个包的结构"></a>3.1 <strong>name</strong>反映一个包的结构</h2><p><strong>name</strong>是内置变量，可用于反映一个包的结构。假设我们有一个包a，包的结构如下：</p>
+<blockquote>
+<p>a<br>├── b<br>│   ├── c.py<br>│   └── <strong>init</strong>.py<br>└── <strong>init</strong>.py  </p>
+</blockquote>
+<p>在包a中，文件c.py，<strong>init</strong>.py，<strong>init</strong>.py的内容都为：print(<strong>name</strong>)<br>当一个.py文件（模块）被其他.py文件（模块）导入时，我们在命令行执行:python -c”import a.b.c”  </p>
+<blockquote>
+<p>输出结果：<br>a<br>a.b<br>a.b.c<br>由此可见，<strong>name</strong>可以清晰地反映一个模块在包中的层次。</p>
+</blockquote>
+<h2 id="3-2-name表示当前模块的名字"><a href="#3-2-name表示当前模块的名字" class="headerlink" title="3.2 name表示当前模块的名字"></a>3.2 <strong>name</strong>表示当前模块的名字</h2><p><strong>name</strong>是内置变量，可用于表示当前模块的名字。我们直接运行一个.py文件（模块）:python a/b/c.py  </p>
+<blockquote>
+<p>输出结果：<strong>main</strong><br>由此我们可知：如果一个.py文件（模块）被直接运行时，则其没有包结构，其<strong>name</strong>值为<strong>main</strong>，即模块名为<strong>main</strong>。  </p>
+</blockquote>
+<p>所以，if <strong>name</strong> == ‘<strong>main</strong>‘的意思是：当.py文件被直接运行时，if <strong>name</strong> == ‘<strong>main</strong>‘之下的代码块将被运行；当.py文件以模块形式被导入时，if <strong>name</strong> == ‘<strong>main</strong>‘之下的代码块不被运行。  </p>
+<h1 id="4-main-py文件与python-m"><a href="#4-main-py文件与python-m" class="headerlink" title="4. main.py文件与python -m"></a>4. <strong>main</strong>.py文件与python -m</h1><p>Python的-m参数用于将一个模块或者包作为一个脚本运行，而<strong>main</strong>.py文件相当于是一个包的“入口程序“。</p>
+<h2 id="4-1-运行Python程序的两种方式"><a href="#4-1-运行Python程序的两种方式" class="headerlink" title="4.1 运行Python程序的两种方式"></a>4.1 运行Python程序的两种方式</h2><ul>
+<li>python xxx.py，直接运行xxx.py文件  </li>
+<li>python -m xxx.py，把xxx.py当做模块运行</li>
+</ul>
+<p>假设我们有一个文件 run.py ，内容如下：<br>import sys<br>print(sys.path)  </p>
+<p>我们用直接运行的方式启动:python run.py<br>输出结果(为了说明问题，输出结果只截取了重要部分，下同)：[‘/home/huoty/aboutme/pythonstudy/main’, …]<br>然后以模块的方式运行:python -m run.py<br>输出内容:<br>[‘’, …]<br>/usr/bin/python: No module named run.py  </p>
+<p>由于输出结果只列出了关键的部分，应该很容易看出他们之间的差异：</p>
+<ul>
+<li><p>直接运行方式是把run.py文件所在的目录放到了sys.path属性中  </p>
+</li>
+<li><p>以模块方式运行是把你输入命令的目录（也就是当前工作路径），放到了 sys.path 属性中。<br>以模块方式运行还有一个不同的地方：多出了一行No module named run.py的错误。实际上以模块方式运行时，Python先对run.py执行一遍 import，所以print(sys.path)被成功执行，然后Python才尝试运行run.py模块，但是在path变量中并没有run.py这个模块，所以报错。正确的运行方式，应该是python -m run。</p>
+<h2 id="4-2总结一下"><a href="#4-2总结一下" class="headerlink" title="4.2总结一下"></a>4.2总结一下</h2></li>
+<li><p>当加上-m参数时，Python会把当前工作目录添加到sys.path中；而不加-m时，Python则会把脚本所在目录添加到sys.path中。</p>
+</li>
+<li><p>当加上-m参数时，Python会先将模块或者包导入，然后再执行。</p>
+</li>
+<li><p><strong>main</strong>.py文件是一个包或者目录的入口程序。不管是用python package还是用python -m package运行，<strong>main</strong>.py文件总是被执行。</p>
+</li>
+</ul>
 
             </div>
             <hr/>
@@ -460,11 +501,7 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/Python%E7%AC%94%E8%AE%B0/">
-                                    <span class="chip bg-color">Python笔记</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -504,10 +541,9 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
                 <a href="/2020/07/15/Python%E5%8F%98%E9%87%8F%E7%AC%94%E8%AE%B0/">
                     <div class="card-image">
@@ -525,9 +561,9 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-15
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-15
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -540,7 +576,6 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -559,27 +594,30 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/07/15/%E5%A6%82%E4%BD%95%E7%AE%80%E5%8D%95%E5%9C%B0%E7%90%86%E8%A7%A3Python%E4%B8%AD%E7%9A%84if%20__name__%20==%20'__main__'%20/">
+                <a href="/2020/07/12/%E7%94%A8hexo%E5%92%8Cgithub%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A21-%E5%87%86%E5%A4%87/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="如何简单地理解Python中的if __name__ == &#39;__main__&#39; ">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="用hexo和github免费搭建自己的博客1.准备">
                         
-                        <span class="card-title">如何简单地理解Python中的if __name__ == &#39;__main__&#39; </span>
+                        <span class="card-title">用hexo和github免费搭建自己的博客1.准备</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-转载自：https://blog.csdn.net/yjk13703623757/article/details/77918633
-
-1. 摘要通俗的理解name == ‘main‘：假如你叫小明，在朋友眼中，你是小明(name == ‘
+                            用hexo和github免费搭建自己的博客(win)1.准备要准备的有：
+node.js
+npm(node.js自带了)  
+cmpn
+git
+hexo
+Visual Studio Code(非必须，但是在写博客.md和编写配置文件的时候很
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-15
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-12
                             </span>
                         <span class="publish-author">
                             
@@ -588,6 +626,14 @@
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%94%A8hexo%E5%92%8Cgithub%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/">
+                        <span class="chip bg-color">用hexo和github免费搭建自己的博客</span>
+                    </a>
+                    
                 </div>
                 
             </div>
