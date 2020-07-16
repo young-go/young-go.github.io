@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="搭建自己的私人网盘, Young的学习记录">
+    <meta name="keywords" content="MicroK8s现迎来技术预览版HA功能, Young的学习记录">
     <meta name="description" content="书山有路勤为径，学海无涯苦作舟">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>搭建自己的私人网盘 | Young的学习记录</title>
+    <title>MicroK8s现迎来技术预览版HA功能 | Young的学习记录</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -215,12 +215,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">搭建自己的私人网盘</h1>
+                    <h1 class="description center-align post-title">MicroK8s现迎来技术预览版HA功能</h1>
                 </div>
             </div>
         </div>
@@ -337,16 +337,20 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E7%BD%91%E7%9B%98/">
-                                <span class="chip bg-color">网盘</span>
+                            <a href="/tags/Kubernetes/">
+                                <span class="chip bg-color">Kubernetes</span>
                             </a>
                         
-                            <a href="/tags/Ubuntu/">
-                                <span class="chip bg-color">Ubuntu</span>
+                            <a href="/tags/MicroK8s/">
+                                <span class="chip bg-color">MicroK8s</span>
                             </a>
                         
-                            <a href="/tags/nextCloud/">
-                                <span class="chip bg-color">nextCloud</span>
+                            <a href="/tags/Windows/">
+                                <span class="chip bg-color">Windows</span>
+                            </a>
+                        
+                            <a href="/tags/MacOS/">
+                                <span class="chip bg-color">MacOS</span>
                             </a>
                         
                     </div>
@@ -361,7 +365,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-07-15
+                    2020-07-16
                 </div>
                 
 
@@ -383,31 +387,15 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <blockquote>
-<p>nextCloud简介：</p>
-<p>nextCloud 是一个开源免费专业的私有云存储项目，它能帮你快速在个人电脑或服务器上架设一套专属的私有云文件同步网盘。本教程中，您将学到如何在Ubuntu 上安装 nextCloud。</p>
+<p>来自<a href="https://cn.ubuntu.com/blog/microk8s-ha-tech-preview-is-now-available-2" target="_blank" rel="noopener">https://cn.ubuntu.com/blog/microk8s-ha-tech-preview-is-now-available-2</a></p>
 </blockquote>
-<blockquote>
-<p>来自：<a href="https://cloud.tencent.com/developer/labs/lab/10287" target="_blank" rel="noopener">https://cloud.tencent.com/developer/labs/lab/10287</a></p>
-</blockquote>
-<h1 id="一-基础设置"><a href="#一-基础设置" class="headerlink" title="一.基础设置"></a>一.基础设置</h1><h2 id="1-切换为-root-账号"><a href="#1-切换为-root-账号" class="headerlink" title="1.切换为 root 账号"></a>1.切换为 root 账号</h2><p>Ubutu 系统默认登录的用户为非 root 权限用户，为了能正常安装 nextCloud，需要切换为 root 账号。执行如下命令即可：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo su</span><br></pre></td></tr></table></figure>
-
-<h2 id="2-更新及安装基础包"><a href="#2-更新及安装基础包" class="headerlink" title="2.更新及安装基础包"></a>2.更新及安装基础包</h2><p>依次运行如下命令，有遇到询问的<code>Is this ok [y/d/N]</code>的时候直接键入<code>y</code>并回车即可。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">apt-get update</span><br><span class="line">apt-get install snap</span><br><span class="line">apt-get install snapd</span><br></pre></td></tr></table></figure>
-
-<h1 id="二-安装-nextCloud"><a href="#二-安装-nextCloud" class="headerlink" title="二.安装 nextCloud"></a>二.安装 nextCloud</h1><h3 id="进入安装"><a href="#进入安装" class="headerlink" title="进入安装"></a>进入安装</h3><p>运行如下命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">snap install nextcloud</span><br></pre></td></tr></table></figure>
-
-<p>国内网络下载有点慢，需要耐心等待。笔者差不多1h 才安装好，建议可以睡个小觉再回来看进度。</p>
-<p>看到如下图则证明安装成功。</p>
-<p><img src="https://share-10039692.file.myqcloud.com/lab/a890e0d326/image/3nwbsft8t0/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-11-03%20%E4%B8%8A%E5%8D%881.03.35.png" alt=""></p>
-<h1 id="三-设置-nextCloud"><a href="#三-设置-nextCloud" class="headerlink" title="三.设置 nextCloud"></a>三.设置 nextCloud</h1><h2 id="创建用户"><a href="#创建用户" class="headerlink" title="创建用户"></a>创建用户</h2><p>访问本机ip (http://&lt;您的 CVM IP 地址&gt;/) 即可进入 nextCloud 的安装页面。</p>
-<p>根据个人需求输入用户名创建用户即可。</p>
-<p><img src="https://share-10039692.file.myqcloud.com/lab/a890e0d326/image/zy50tldqop/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-11-03%20%E4%B8%8A%E5%8D%881.08.25.png" alt=""></p>
-<h2 id="管理"><a href="#管理" class="headerlink" title="管理"></a>管理</h2><p>创建成功即进入管理界面，与一般的网盘使用上无多大差别，也可以按照提示下载使用移动端 app 管理文件。</p>
-<p><img src="https://share-10039692.file.myqcloud.com/lab/a890e0d326/image/ekznc52az1/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-11-03%20%E4%B8%8A%E5%8D%881.09.47.png" alt="image"></p>
-<p><img src="https://share-10039692.file.myqcloud.com/lab/a890e0d326/image/dp0ec39cnr/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-11-03%20%E4%B8%8A%E5%8D%881.11.56.png" alt="image"></p>
-<p><img src="https://share-10039692.file.myqcloud.com/lab/a890e0d326/image/5pelfuv82b/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-11-03%20%E4%B8%8A%E5%8D%881.12.03.png" alt="image"></p>
+<p>轻量级的Kubernetes <a href="https://microk8s.io/" target="_blank" rel="noopener">MicroK8s</a>现在迎来了高可用（HA）的技术预览版功能，支持Linux、Windows和MacOS。Kubernetes控制面板现在可以分布在多个节点上，使用分布式SQL引擎<a href="https://dqlite.io/" target="_blank" rel="noopener">Dqlite</a>作为Kubernetes数据存储，在为集群带来弹性的同时保持较低的占用空间。<br>在Linux上，你可从技术预览（ha-preview）分支下载和测试MicroK8s的HA功能，命令如下：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo snap install microk8s --classic --channel&#x3D;latest&#x2F;edge&#x2F;ha-preview</span><br></pre></td></tr></table></figure>
+<p>如果您已经有了MicroK8s，可通过<a href="https://microk8s.io/docs/high-availability" target="_blank" rel="noopener">MicroK8s HA文档</a>了解如何升级至HA通道和设置您的MicroK8s HA集群。</p>
+<p>如您想要在<a href="https://microk8s.io/docs/install-alternatives#heading--windows" target="_blank" rel="noopener">Windows</a>和<a href="https://microk8s.io/docs/install-alternatives#heading--macos" target="_blank" rel="noopener">MacOS</a>上测试HA功能，请按照相应的安装说明进行操作，并在安装完成后运行以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">multipass exec microk8s -- sudo snap refresh microk8s --classic --channel&#x3D;latest&#x2F;edge&#x2F;ha-preview</span><br></pre></td></tr></table></figure>
+<p>请注意，HA技术预览版本的HA功能默认是开启的。这意味着在通过HA控制面板将自动添加至少2个节点至集群从而形成3个节点。  </p>
+<p>一旦您添加额外的节点到HA集群，MicroK8s输出状态将会变成下面图示：<br><img src="https://admin.insights.ubuntu.com/wp-content/uploads/46b8/pasted-image-0-4.png" alt=""></p>
 
             </div>
             <hr/>
@@ -433,7 +421,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://young-go.github.io/2020/07/15/%E5%9F%BA%E4%BA%8E%20Ubuntu+nextCloud%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E7%A7%81%E4%BA%BA%E7%BD%91%E7%9B%98/">http://young-go.github.io/2020/07/15/%E5%9F%BA%E4%BA%8E%20Ubuntu+nextCloud%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E7%A7%81%E4%BA%BA%E7%BD%91%E7%9B%98/</a>
+                    <a href="http://young-go.github.io/2020/07/16/MicroK8s%E7%8E%B0%E8%BF%8E%E6%9D%A5%E6%8A%80%E6%9C%AF%E9%A2%84%E8%A7%88%E7%89%88HA%E5%8A%9F%E8%83%BD/">http://young-go.github.io/2020/07/16/MicroK8s%E7%8E%B0%E8%BF%8E%E6%9D%A5%E6%8A%80%E6%9C%AF%E9%A2%84%E8%A7%88%E7%89%88HA%E5%8A%9F%E8%83%BD/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -471,16 +459,20 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E7%BD%91%E7%9B%98/">
-                                    <span class="chip bg-color">网盘</span>
+                                <a href="/tags/Kubernetes/">
+                                    <span class="chip bg-color">Kubernetes</span>
                                 </a>
                             
-                                <a href="/tags/Ubuntu/">
-                                    <span class="chip bg-color">Ubuntu</span>
+                                <a href="/tags/MicroK8s/">
+                                    <span class="chip bg-color">MicroK8s</span>
                                 </a>
                             
-                                <a href="/tags/nextCloud/">
-                                    <span class="chip bg-color">nextCloud</span>
+                                <a href="/tags/Windows/">
+                                    <span class="chip bg-color">Windows</span>
+                                </a>
+                            
+                                <a href="/tags/MacOS/">
+                                    <span class="chip bg-color">MacOS</span>
                                 </a>
                             
                         </div>
@@ -526,22 +518,22 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/07/16/MicroK8s%E7%8E%B0%E8%BF%8E%E6%9D%A5%E6%8A%80%E6%9C%AF%E9%A2%84%E8%A7%88%E7%89%88HA%E5%8A%9F%E8%83%BD/">
+                <a href="/2020/07/16/%E8%BD%AF%E4%BB%B6%E6%B8%85%E5%8D%95%E5%88%97%E8%A1%A8/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="MicroK8s现迎来技术预览版HA功能">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="国光的 macOS 软件清单列表">
                         
-                        <span class="card-title">MicroK8s现迎来技术预览版HA功能</span>
+                        <span class="card-title">国光的 macOS 软件清单列表</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
                             
-来自https://cn.ubuntu.com/blog/microk8s-ha-tech-preview-is-now-available-2
+来源: 国光文章作者: 国光文章链接: https://www.sqlsec.com/2020/06/macsoft.html#toc-heading-79咳咳又想白嫖文章？本文章著作权归作者所有，任何形式的转载都请注明出处。
 
-轻量级的Kubernetes MicroK8s现在迎来了高可用（HA）的技术预览版功能，支
+昨天凌晨
                         
                     </div>
                     <div class="publish-info">
@@ -559,20 +551,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Kubernetes/">
-                        <span class="chip bg-color">Kubernetes</span>
-                    </a>
-                    
-                    <a href="/tags/MicroK8s/">
-                        <span class="chip bg-color">MicroK8s</span>
-                    </a>
-                    
-                    <a href="/tags/Windows/">
-                        <span class="chip bg-color">Windows</span>
-                    </a>
-                    
                     <a href="/tags/MacOS/">
                         <span class="chip bg-color">MacOS</span>
+                    </a>
+                    
+                    <a href="/tags/APP/">
+                        <span class="chip bg-color">APP</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%B8%85%E5%8D%95/">
+                        <span class="chip bg-color">清单</span>
                     </a>
                     
                 </div>
@@ -586,23 +574,24 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/07/15/Python%20PyInstaller%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%EF%BC%88%E8%AF%A6%E8%A7%A3%E7%89%88%EF%BC%89/">
+                <a href="/2020/07/15/%E5%9F%BA%E4%BA%8E%20Ubuntu+nextCloud%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E7%A7%81%E4%BA%BA%E7%BD%91%E7%9B%98/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="Python PyInstaller安装和使用教程（详解版）">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="搭建自己的私人网盘">
                         
-                        <span class="card-title">Python PyInstaller安装和使用教程（详解版）</span>
+                        <span class="card-title">搭建自己的私人网盘</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
                             
-转载自http://c.biancheng.net/view/2690.html
+nextCloud简介：
+nextCloud 是一个开源免费专业的私有云存储项目，它能帮你快速在个人电脑或服务器上架设一套专属的私有云文件同步网盘。本教程中，您将学到如何在Ubuntu 上安装 nextCloud。
 
 
-
+来自：https:
                         
                     </div>
                     <div class="publish-info">
@@ -611,12 +600,8 @@
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Python/" class="post-category">
-                                    Python
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Young
                             
                         </span>
                     </div>
@@ -624,8 +609,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/PyInstaller/">
-                        <span class="chip bg-color">PyInstaller</span>
+                    <a href="/tags/%E7%BD%91%E7%9B%98/">
+                        <span class="chip bg-color">网盘</span>
+                    </a>
+                    
+                    <a href="/tags/Ubuntu/">
+                        <span class="chip bg-color">Ubuntu</span>
+                    </a>
+                    
+                    <a href="/tags/nextCloud/">
+                        <span class="chip bg-color">nextCloud</span>
                     </a>
                     
                 </div>
